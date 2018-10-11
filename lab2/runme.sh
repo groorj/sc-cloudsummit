@@ -18,7 +18,7 @@ fi
 
 STACK_NAME=`cat /tmp/stack-name.txt`
 curl https://sc-pcsummit-${STACK_NAME}.s3-us-west-1.amazonaws.com/index.html -fo /tmp/new-index.html
-if [ ! -f /tmp/new-index.html ]; then
+if [ -f /tmp/new-index.html ]; then
 	cp /tmp/new-index.html /var/www/html/index.html
 fi
 
